@@ -18,6 +18,9 @@ function w3_open() {
 
 const count = document.getElementById("counter");
 async function updateCounter(){
+    const response = await fetch("");
+    const data = await response.json();
+    console.log(data);
     let num = 1;
     count.innerHTML = `Hello! You are Visitor ${num}!`;
 }

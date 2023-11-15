@@ -13,6 +13,8 @@ Edit website front-end to better suit requirements
 Visitor counter pulls from an AWS DynamoDB instance using AWS Lambda and API Gateway.
 Terraform
 Github Actions to auto deploy new code on AWS
+fix close menu button
+make project briefs match neighbour in height
 
 # Credit
 Website template taken from w3schools.

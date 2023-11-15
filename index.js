@@ -9,9 +9,16 @@ function w3_open() {
   }
   
   // Modal Image Gallery
-  function onClick(element) {
-    document.getElementById("img01").src = element.src;
-    document.getElementById("modal01").style.display = "block";
-    var captionText = document.getElementById("caption");
-    captionText.innerHTML = element.alt;
-  }
+//   function onClick(element) {
+//     document.getElementById("img01").src = element.src;
+//     document.getElementById("modal01").style.display = "block";
+//     var captionText = document.getElementById("caption");
+//     captionText.innerHTML = element.alt;
+//   }
+
+const count = document.getElementById("counter");
+async function updateCounter(){
+    let num = 1;
+    count.innerHTML = `Hello! You are Visitor ${num}!`;
+}
+updateCounter();

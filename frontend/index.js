@@ -18,10 +18,8 @@ function w3_open() {
 
 const count = document.getElementById("counter");
 async function updateCounter(){
-    const response = await fetch("");
+    const response = await fetch("https://2tsvlc6ueyzsmxekqgsimzi3ye0wkvfz.lambda-url.ap-southeast-2.on.aws/");
     const data = await response.json();
-    console.log(data);
-    let num = 1;
-    count.innerHTML = `Hello! You are Visitor ${num}!`;
+    count.innerHTML = `Hello! You are Visitor ${data}!`;
 }
 updateCounter();

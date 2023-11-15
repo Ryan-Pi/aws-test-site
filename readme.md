@@ -10,7 +10,7 @@ Currently hosted on AWS as a static website using S3, Route53, CloudFront, Certi
 
 # TODO:
 Edit website front-end to better suit requirements
-Visitor counter pulls from an AWS DynamoDB instance using AWS Lambda and API Gateway.
+Visitor counter pulls from an AWS DynamoDB instance using AWS Lambda with a function URL.
 Terraform
 Github Actions to auto deploy new code on AWS
 fix close menu button

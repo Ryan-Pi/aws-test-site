@@ -18,6 +18,7 @@ def lambda_handler(event, context):
     )
     
     # extract visitor count from json response and return to requester
+    # could just return this instead, but leaving it in for now
     update = update['Attributes']['numCount']
 
     return update

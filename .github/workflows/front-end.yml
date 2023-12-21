@@ -3,9 +3,9 @@ name: upload frontend to S3
 on:
   push:
     branches:
-    - main
+      - main
     paths:
-    - 'frontend/**'
+      - 'frontend/**'
 
 jobs:
   deploy:

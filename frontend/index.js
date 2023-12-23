@@ -17,9 +17,15 @@ function w3_open() {
 //   }
 
 const count = document.getElementById("counter");
+API_ENDPOINT = "https://2tsvlc6ueyzsmxekqgsimzi3ye0wkvfz.lambda-url.ap-southeast-2.on.aws/"
 async function updateCounter(){
-    const response = await fetch("https://2tsvlc6ueyzsmxekqgsimzi3ye0wkvfz.lambda-url.ap-southeast-2.on.aws/");
+    const response = await fetch(API_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    });
     const data = await response.json();
-    count.innerHTML = `Hello! You are Visitor ${data}!`;
+    count.innerHTML = `Hello! You are Visitor ${data.numVisitors}!`;
 }
 updateCounter();

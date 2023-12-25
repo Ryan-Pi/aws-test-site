@@ -21,11 +21,8 @@ API_ENDPOINT = "https://2tsvlc6ueyzsmxekqgsimzi3ye0wkvfz.lambda-url.ap-southeast
 async function updateCounter(){
     const response = await fetch(API_ENDPOINT, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      }
     });
     const data = await response.json();
-    count.innerHTML = `Hello! You are Visitor ${data.numVisitors}!`;
+    count.innerHTML = `Hello! You are Visitor ${data.body.numVisitors}!`;
 }
 updateCounter();

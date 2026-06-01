@@ -1,22 +1,21 @@
 import json
 import boto3
 
+
+
 def lambda_handler(event, context):
     # define dynamodb resources
-    dynamodb = boto3.resource('dynamodb')
+    dynamodb = boto3.resource('dynamodb', region_name="ap-southeast-2")
     table = dynamodb.Table('test-site')
     
-    visitors = table.get_item(Key={
-        'counter': 'visitor'
-        }
-    )
+    visitors = table.get_item(Key={'counter': 'visitor'})
     
     # if visitor item is non-existent, create new item
     if "Item" not in visitors:
         table.put_item(
             Item={'counter': 'visitor','numCount': 1}
         )
-        return 1
+        return respond(1)
     else:
     # increment visitor count by 1 and then return visitor count
         update = table.update_item(
@@ -40,6 +39,7 @@ def respond(visitCount):
         "statusCode": 200,
         "headers": {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
         },
         "body": object,
     }
